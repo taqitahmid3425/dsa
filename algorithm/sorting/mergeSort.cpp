@@ -6,7 +6,6 @@ using namespace std;
 void merge(vector<int> &arr, int left, int mid, int right)
 {
     vector<int> L, R;
-    // int i = left, j = mid + 1;
     for (int i = left; i <= mid; i++)
     {
         L.push_back(arr[i]);
