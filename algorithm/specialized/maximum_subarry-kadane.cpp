@@ -3,6 +3,7 @@
 #include <climits>
 using namespace std;
 
+// maximum subarray - leetcode question 53
 // brute force approce - time complexity: O(n^2)
 int maxSubarray(vector<int> &arr)
 {
@@ -11,10 +12,11 @@ int maxSubarray(vector<int> &arr)
     for (int start = 0; start < length; start++)
     {
         int currSum = 0;
-        for (int end = 0; end < length; end++)
+        for (int end = start; end < length; end++)
         {
             currSum += arr[end];
-            maxSum = (maxSum < currSum) ? currSum : maxSum;
+            // maxSum = (maxSum < currSum) ? currSum : maxSum;
+            maxSum = max(currSum, maxSum);
         }
     }
     return maxSum;
